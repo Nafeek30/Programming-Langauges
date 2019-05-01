@@ -1,0 +1,15 @@
+p01: p01.o p01lex.o
+	g++ -o p01 p01.o p01lex.o -ll
+
+p01.o: p01.cpp p01lex.h p01tkn.h
+	g++ -g -c p01.cpp
+
+p01lex.o: p01lex.cpp p01lex.h p01tkn.h
+	g++ -g -c p01lex.cpp
+
+p01lex.cpp: p01lex.l p01lex.h p01tkn.h
+	lex p01lex.l
+	mv lex.yy.c p01lex.cpp
+
+clean:
+	rm *.o p01lex.cpp p01

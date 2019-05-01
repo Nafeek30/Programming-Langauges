@@ -1,0 +1,160 @@
+
+Token: Code=305 Name=   PROGRAM line=  1 column=  8 Spelling="program"
+Token: Code=258 Name=        ID line=  1 column= 16 Spelling="example"
+Token: Code=271 Name=    LPAREN line=  1 column= 17 Spelling="("
+Token: Code=258 Name=        ID line=  1 column= 22 Spelling="input"
+#002 identifier-list-> ID
+Token: Code=264 Name=     COMMA line=  1 column= 23 Spelling=","
+Token: Code=258 Name=        ID line=  1 column= 29 Spelling="output"
+#003 identifier-list-> identifier-list, ID
+Token: Code=272 Name=    RPAREN line=  1 column= 30 Spelling=")"
+Token: Code=265 Name= SEMICOLON line=  1 column= 31 Spelling=";"
+#004 declarations-> /\
+Token: Code=290 Name=       VAR line=  2 column=  6 Spelling="var"
+Token: Code=258 Name=        ID line=  2 column=  8 Spelling="x"
+#002 identifier-list-> ID
+Token: Code=264 Name=     COMMA line=  2 column=  9 Spelling=","
+Token: Code=258 Name=        ID line=  2 column= 10 Spelling="y"
+#003 identifier-list-> identifier-list, ID
+Token: Code=302 Name=     COLON line=  2 column= 11 Spelling=":"
+Token: Code=279 Name=   INTEGER line=  2 column= 19 Spelling="integer"
+#008 standard-type-> INTEGER
+#006 type-> standard-type
+Token: Code=265 Name= SEMICOLON line=  2 column= 20 Spelling=";"
+#005 declarations-> VAR identifier-list : type;
+Token: Code=277 Name=  FUNCTION line=  3 column= 11 Spelling="function"
+#010 subprogram-declarations-> /\
+Token: Code=258 Name=        ID line=  3 column= 15 Spelling="gcd"
+Token: Code=271 Name=    LPAREN line=  3 column= 16 Spelling="("
+Token: Code=258 Name=        ID line=  3 column= 17 Spelling="a"
+#002 identifier-list-> ID
+Token: Code=264 Name=     COMMA line=  3 column= 18 Spelling=","
+Token: Code=258 Name=        ID line=  3 column= 19 Spelling="b"
+#003 identifier-list-> identifier-list, ID
+Token: Code=302 Name=     COLON line=  3 column= 20 Spelling=":"
+Token: Code=279 Name=   INTEGER line=  3 column= 27 Spelling="integer"
+#008 standard-type-> INTEGER
+#006 type-> standard-type
+#017 parameter-list-> identifier-list : type
+Token: Code=272 Name=    RPAREN line=  3 column= 28 Spelling=")"
+#016 arguments-> (parameter-list)
+Token: Code=302 Name=     COLON line=  3 column= 29 Spelling=":"
+Token: Code=279 Name=   INTEGER line=  3 column= 36 Spelling="integer"
+#008 standard-type-> INTEGER
+Token: Code=265 Name= SEMICOLON line=  3 column= 37 Spelling=";"
+#013 subprogram-head-> FUNCTION ID arguments : standard-type;
+#004 declarations-> /\
+Token: Code=259 Name=     BEGIN line=  4 column=  8 Spelling="begin"
+Token: Code=278 Name=        IF line=  5 column=  7 Spelling="if"
+Token: Code=258 Name=        ID line=  5 column=  9 Spelling="b"
+Token: Code=294 Name=       EQU line=  5 column= 10 Spelling="="
+#056 factor-> ID
+#049 term-> factor
+#043 relop-> term
+#037 relop-> =
+Token: Code=263 Name=    INTLIT line=  5 column= 11 Spelling="0"
+#058 factor-> INTLIT
+#049 term-> factor
+Token: Code=287 Name=      THEN line=  5 column= 16 Spelling="then"
+#043 relop-> term
+#036 expression-> simple-expression relop simple-expression
+Token: Code=258 Name=        ID line=  5 column= 20 Spelling="gcd"
+Token: Code=266 Name=    ASSIGN line=  5 column= 22 Spelling=":="
+#029 variable-> ID
+Token: Code=258 Name=        ID line=  5 column= 23 Spelling="a"
+Token: Code=275 Name=      ELSE line=  6 column=  9 Spelling="else"
+#056 factor-> ID
+#049 term-> factor
+#043 relop-> term
+#035 expression-> simple-expression
+#024 statement-> variable := expression
+Token: Code=258 Name=        ID line=  6 column= 13 Spelling="gcd"
+Token: Code=266 Name=    ASSIGN line=  6 column= 15 Spelling=":="
+#029 variable-> ID
+Token: Code=258 Name=        ID line=  6 column= 18 Spelling="gcd"
+Token: Code=271 Name=    LPAREN line=  6 column= 19 Spelling="("
+Token: Code=258 Name=        ID line=  6 column= 20 Spelling="b"
+Token: Code=264 Name=     COMMA line=  6 column= 21 Spelling=","
+#056 factor-> ID
+#049 term-> factor
+#043 relop-> term
+#035 expression-> simple-expression
+#033 expression-list-> expression
+Token: Code=258 Name=        ID line=  6 column= 22 Spelling="a"
+Token: Code=280 Name=       MOD line=  6 column= 26 Spelling="mod"
+#056 factor-> ID
+#049 term-> factor
+#054 mulop-> MOD
+Token: Code=258 Name=        ID line=  6 column= 28 Spelling="b"
+Token: Code=272 Name=    RPAREN line=  6 column= 29 Spelling=")"
+#056 factor-> ID
+#050 term-> term mulop factor
+#043 relop-> term
+#035 expression-> simple-expression
+#034 expression-list-> expression-list, expression
+#057 factor-> ID(expression-list)
+#049 term-> factor
+Token: Code=260 Name=       END line=  7 column=  6 Spelling="end"
+#043 relop-> term
+#035 expression-> simple-expression
+#024 statement-> variable := expression
+#027 statement-> IF expression THEN statement ELSE statement
+#022 statement-list-> statement
+#021 optional-statements-> statement-list
+#019 compound-statement-> BEGIN optional-statements END
+#012 subprogram-declaration-> subprogram-head declarations compound-statement
+Token: Code=265 Name= SEMICOLON line=  7 column=  7 Spelling=";"
+#011 subprogram-declarations-> subprogram-declarations subprogram-declaration;
+Token: Code=259 Name=     BEGIN line=  8 column=  6 Spelling="begin"
+Token: Code=258 Name=        ID line=  9 column=  9 Spelling="readln"
+Token: Code=271 Name=    LPAREN line=  9 column= 10 Spelling="("
+Token: Code=258 Name=        ID line=  9 column= 11 Spelling="x"
+Token: Code=264 Name=     COMMA line=  9 column= 12 Spelling=","
+#056 factor-> ID
+#049 term-> factor
+#043 relop-> term
+#035 expression-> simple-expression
+#033 expression-list-> expression
+Token: Code=258 Name=        ID line=  9 column= 13 Spelling="y"
+Token: Code=272 Name=    RPAREN line=  9 column= 14 Spelling=")"
+#056 factor-> ID
+#049 term-> factor
+#043 relop-> term
+#035 expression-> simple-expression
+#034 expression-list-> expression-list, expression
+#032 procedure-statement-> ID(expression-list)
+#025 statement-> procedure-statement
+#022 statement-list-> statement
+Token: Code=265 Name= SEMICOLON line=  9 column= 15 Spelling=";"
+Token: Code=258 Name=        ID line= 10 column=  8 Spelling="write"
+Token: Code=271 Name=    LPAREN line= 10 column=  9 Spelling="("
+Token: Code=258 Name=        ID line= 10 column= 12 Spelling="gcd"
+Token: Code=271 Name=    LPAREN line= 10 column= 13 Spelling="("
+Token: Code=258 Name=        ID line= 10 column= 14 Spelling="x"
+Token: Code=264 Name=     COMMA line= 10 column= 15 Spelling=","
+#056 factor-> ID
+#049 term-> factor
+#043 relop-> term
+#035 expression-> simple-expression
+#033 expression-list-> expression
+Token: Code=258 Name=        ID line= 10 column= 16 Spelling="y"
+Token: Code=272 Name=    RPAREN line= 10 column= 17 Spelling=")"
+#056 factor-> ID
+#049 term-> factor
+#043 relop-> term
+#035 expression-> simple-expression
+#034 expression-list-> expression-list, expression
+#057 factor-> ID(expression-list)
+#049 term-> factor
+Token: Code=272 Name=    RPAREN line= 10 column= 18 Spelling=")"
+#043 relop-> term
+#035 expression-> simple-expression
+#033 expression-list-> expression
+#032 procedure-statement-> ID(expression-list)
+#025 statement-> procedure-statement
+#023 statement-list-> statement-list; statement
+Token: Code=260 Name=       END line= 11 column=  4 Spelling="end"
+#021 optional-statements-> statement-list
+#019 compound-statement-> BEGIN optional-statements END
+Token: Code=303 Name=    PERIOD line= 11 column=  5 Spelling="."
+#001 program-> PROGRAM ID(identifier-list); declarations subprogram-declarations compound-statment.

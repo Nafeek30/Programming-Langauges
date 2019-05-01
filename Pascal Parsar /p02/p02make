@@ -1,0 +1,26 @@
+obj	=	p02.o p02par.o p02lex.o
+
+p02:		${obj}
+		g++ -o p02 ${obj} -ll
+
+p02.o:		p02.cpp p02par.h p02lex.h
+		g++ -g -c p02.cpp
+
+p02lex.o:	p02lex.cpp p02lex.h p02tkn.h
+	        g++ -g -c p02lex.cpp
+
+p02lex.cpp:	p02lex.l p02lex.h p02tkn.h
+		lex p02lex.l
+		mv lex.yy.c p02lex.cpp
+
+p02par.o:	p02par.cpp p02par.h
+		g++ -c -g p02par.cpp
+
+p02tkn.h\
+p02par.cpp:	p02par.y
+		yacc -d -v p02par.y
+		mv y.tab.c p02par.cpp
+		mv y.tab.h p02tkn.h
+
+clean:
+		rm *.o p02lex.cpp p02tkn.h p02par.cpp p02 y.output

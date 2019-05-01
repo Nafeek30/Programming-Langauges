@@ -1,0 +1,55 @@
+
+Token: Code=305 Name=   PROGRAM line=  1 column=  8 Spelling="program"
+Token: Code=258 Name=        ID line=  1 column= 12 Spelling="p00"
+Token: Code=271 Name=    LPAREN line=  1 column= 13 Spelling="("
+Token: Code=258 Name=        ID line=  1 column= 18 Spelling="input"
+#002 identifier-list-> ID
+Token: Code=264 Name=     COMMA line=  1 column= 19 Spelling=","
+Token: Code=258 Name=        ID line=  1 column= 25 Spelling="output"
+#003 identifier-list-> identifier-list, ID
+Token: Code=272 Name=    RPAREN line=  1 column= 26 Spelling=")"
+Token: Code=265 Name= SEMICOLON line=  1 column= 27 Spelling=";"
+#004 declarations-> /\
+Token: Code=290 Name=       VAR line=  2 column=  5 Spelling="var"
+Token: Code=258 Name=        ID line=  2 column=  7 Spelling="a"
+#002 identifier-list-> ID
+Token: Code=302 Name=     COLON line=  2 column=  8 Spelling=":"
+Token: Code=279 Name=   INTEGER line=  2 column= 15 Spelling="integer"
+#008 standard-type-> INTEGER
+#006 type-> standard-type
+Token: Code=265 Name= SEMICOLON line=  2 column= 16 Spelling=";"
+#005 declarations-> VAR identifier-list : type;
+Token: Code=259 Name=     BEGIN line=  3 column=  6 Spelling="begin"
+#010 subprogram-declarations-> /\
+Token: Code=258 Name=        ID line=  4 column=  3 Spelling="a"
+Token: Code=266 Name=    ASSIGN line=  4 column=  5 Spelling=":="
+#029 variable-> ID
+Token: Code=263 Name=    INTLIT line=  4 column=  6 Spelling="1"
+#058 factor-> INTLIT
+#049 term-> factor
+Token: Code=265 Name= SEMICOLON line=  4 column=  7 Spelling=";"
+#043 relop-> term
+#035 expression-> simple-expression
+#024 statement-> variable := expression
+#022 statement-list-> statement
+Token: Code=258 Name=        ID line=  5 column=  3 Spelling="a"
+Token: Code=266 Name=    ASSIGN line=  5 column=  5 Spelling=":="
+#029 variable-> ID
+Token: Code=258 Name=        ID line=  5 column=  6 Spelling="a"
+Token: Code=267 Name=      PLUS line=  5 column=  7 Spelling="+"
+#056 factor-> ID
+#049 term-> factor
+#043 relop-> term
+#046 addop-> +
+Token: Code=263 Name=    INTLIT line=  5 column=  8 Spelling="1"
+#058 factor-> INTLIT
+#049 term-> factor
+Token: Code=260 Name=       END line=  6 column=  4 Spelling="end"
+#045 simple-expression-> simple-expression addop term
+#035 expression-> simple-expression
+#024 statement-> variable := expression
+#023 statement-list-> statement-list; statement
+#021 optional-statements-> statement-list
+#019 compound-statement-> BEGIN optional-statements END
+Token: Code=303 Name=    PERIOD line=  6 column=  5 Spelling="."
+#001 program-> PROGRAM ID(identifier-list); declarations subprogram-declarations compound-statment.
